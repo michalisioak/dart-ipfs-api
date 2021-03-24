@@ -21,9 +21,13 @@ Future<AddResponse> add(
 }) async {
   var request = http.MultipartRequest("POST", Uri.parse(url + "add"));
   request.files.add(http.MultipartFile.fromBytes('file', file));
-  request.fields['quite'] = quite.toString();
-  request.fields['quiter'] = quiter.toString();
-  //TODO
+  request.fields.addAll({
+    "quite": quite.toString(),
+    "quiter": quiter.toString(),
+    "silent": silent.toString(),
+    "progress": progress.toString(),
+    //TODO
+  });
   final response = await request.send();
   if (response.statusCode == 201) {
     final res = jsonDecode(await response.stream.bytesToString());

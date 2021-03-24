@@ -2,11 +2,12 @@ name: dart_ipfs_api
 version: 0.0.1
 description: >-
   A client that communicates with ipfs_companion to access ipfs
-repository:
+repository: https://github.com/michalisioak/dart-ipfs-api
+issue_tracker: https://github.com/michalisioak/dart-ipfs-api/issues
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-  http:
+  http: ^0.13.1
 
 dev_dependencies:
